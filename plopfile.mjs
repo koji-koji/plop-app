@@ -1,19 +1,14 @@
 import minimist from 'minimist'
 
-export default function (
-  /** @type {import('plop').NodePlopAPI} */
-  plop,
-) {
-  // 追加
-  // コマンドライン引数を解析するために minimist を使用
-  // process.argv はコマンドライン引数の配列で、最初の2つの要素は Node.js の実行バイナリとスクリプトのパスなので、slice(2) を使って実際の引数を取得する
+export default function (plop) {
+  // Use minimist to parse command-line arguments
+  // process.argv is an array of command-line arguments, with the first two elements being the Node.js binary and the script path, so slice(2) is used to get the actual arguments
   const args = minimist(process.argv.slice(2))
 
   plop.setGenerator('component', {
     description: 'React component generator',
     prompts: [
-      // 追加
-      // コマンドライン引数に name が含まれていない場合のみ、プロンプトを表示する
+      // Only display the prompt if the command-line arguments do not include a name
       ...(!args.name
         ? [
             {
@@ -35,7 +30,6 @@ export default function (
         : []),
     ],
     actions: function (data) {
-      // 追加
       data.name = data.name || args.name
       data.type = data.type || args.type
 
