@@ -1,4 +1,2 @@
-# .prettierignore
-
 # Plop.js templates
 **/plop-templates/**/*.hbs
