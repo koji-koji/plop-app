@@ -1,15 +1,17 @@
-import { memo } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import {{pascalCase name}} from './{{pascalCase name}}';
 
-type Props = {
-  className?: string;
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: '{{pascalCase type}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  tags: ['autodocs'],
 };
 
-const {{pascalCase name}} = ({ className = '' }: Props) => {
-  return (
-    <div className={className}>
-      {{pascalCase name}}
-    </div>
-  );
-};
+export default meta;
+type Story = StoryObj<typeof {{pascalCase name}}>;
 
-export default memo({{pascalCase name}});
+export const Default: Story = {
+  args: {
+    // ここにデフォルトのプロップを追加
+  },
+};
