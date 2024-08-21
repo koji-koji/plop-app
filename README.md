@@ -7,6 +7,8 @@
 
 ![コンポーネント生成デモ](src/assets/component_generate.gif)
 
+実装方法は [ブログ](https://zenn.dev/koji_koji_koji/articles/d46e40db408dda) に書いています。
+
 ## 依存関係のインストール
 
 ```
